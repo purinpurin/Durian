@@ -4,6 +4,7 @@
 // @namespace    https://github.com/purinpurin/Durian
 // @version      0.1.0
 // @author       Purin <acclotepho@gmail.com>
+// @license      MIT
 // @include        *
 // @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_detector.js
 // @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_converter.js

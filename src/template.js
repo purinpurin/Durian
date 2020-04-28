@@ -4,6 +4,7 @@
 // @namespace    https://github.com/purinpurin/Durian
 // @version      0.1.0
 // @author       Purin <acclotepho@gmail.com>
+// @license      MIT
 // @include        *
 {dependencies}
 // @noframes
