@@ -1,0 +1,20 @@
+language: node_js
+node_js: 12.16.2
+before_script:
+  - npm install yarn webpack -g
+  - git checkout master
+  - yarn
+
+script:
+  - yarn build
+
+cache:
+  yarn: true
+  webpack: true
+  directories:
+    - "node_modules"  
+
+  
+env:
+ global:
+   - GH_REF: github.com/purinpurin/Durian.git
