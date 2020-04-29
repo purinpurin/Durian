@@ -13,7 +13,7 @@
   </a>
 </p>
 
-**Durian** is a userscript which detects Zawgyi texts in a webpage and convert them into Unicode compatible texts so that Unicode users can read texts written with Zawgyi.
+**Durian** is a userscript which detects Zawgyi texts in a webpage and convert them into Unicode compatible texts so that users who do not have Zawgyi or ZawDecode fonts can read texts written with Zawgyi.
 
 
 ## Installation
@@ -24,6 +24,7 @@ Webiste: https://violentmonkey.github.io/
 
 	You can install this script via `GitHub`:
     - GitHub: https://raw.githubusercontent.com/purinpurin/Durian/master/dist/durian.user.js
+    - Greasy Fork: https://greasyfork.org/en/scripts/402235-durian-detect-zawgyi-and-convert-it-to-unicode
 
 
 ## Known bug
