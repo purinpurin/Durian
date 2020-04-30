@@ -1,0 +1,13 @@
+{
+  "name": "Durian",
+  "version": "0.1.0",
+  "description": "Detect Zawgyi and convert it to Unicode standard",
+  "scripts": {
+    "dev": "webextension-toolbox dev",
+    "build": "webextension-toolbox build firefox && webextension-toolbox build chrome && webextension-toolbox build edge && webextension-toolbox build opera"
+  },
+  "devDependencies": {
+    "webextension-toolbox": "latest"
+  },
+  "dependencies": {}
+}
