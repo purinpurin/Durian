@@ -10,8 +10,8 @@
 // @downloadURL  https://raw.githubusercontent.com/purinpurin/Durian/master/dist/durian.user.js
 // @installURl   https://raw.githubusercontent.com/purinpurin/Durian/master/dist/durian.user.js
 // @updateURL    https://raw.githubusercontent.com/purinpurin/Durian/master/dist/durian.user.js
-// @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_detector.js
-// @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_converter.js
+// @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_detector.min.js
+// @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_converter.min.js
 // @noframes
 // @run-at      document-end
 // ==/UserScript==
@@ -22,17 +22,16 @@
 
 var detector = new google_myanmar_tools.ZawgyiDetector();
 var converter = new google_myanmar_tools.ZawgyiConverter();
-
 /** 
  * Check the probablity of the input text being Zawgyi.
  * Treshold is 0.95
  * @param   {string} text     - Input text
  * @return          
  */
-function isZawgyi(text) {
-    if (text) return detector.getZawgyiProbability(text) > 0.95;else return false;
-}
 
+function isZawgyi(text) {
+  if (text) return detector.getZawgyiProbability(text) > 0.95;else return false;
+}
 /**
  * Replace Zawgyi texts with Unicode texts.
  * If the node contains more than just text (ex: it has child nodes),
@@ -41,49 +40,54 @@ function isZawgyi(text) {
  * @param  {Node} node    - The target DOM Node.
  * @return {void}         - Note: the emoji substitution is done inline.
  */
+
+
 function replaceText(node) {
-    var content = node.textContent;
+  var content = node.textContent;
 
-    if (isZawgyi(content)) {
-        node.textContent = converter.zawgyiToUnicode(content);
-    }
+  if (isZawgyi(content)) {
+    node.textContent = converter.zawgyiToUnicode(content);
+  }
 }
-
 /**
  * Get all text nodes under given element.
  * @param {Element} element         - Parent element that we want to filter for text nodes.
  * @returns {Node}                  - Text nodes
  */
+
+
 function getTextNodesUnder(element) {
-    var node,
-        textNodes = [],
-        walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
-    while (node = walk.nextNode()) {
-        textNodes.push(node);
-    }return textNodes;
+  var node,
+      textNodes = [],
+      walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+
+  while (node = walk.nextNode()) {
+    textNodes.push(node);
+  }
+
+  return textNodes;
 }
 
 var textNodesUnderBody = getTextNodesUnder(document.body);
 textNodesUnderBody.forEach(function (textNode) {
-    replaceText(textNode);
-});
+  replaceText(textNode);
+}); // Monitor for new nodes
 
-// Monitor for new nodes
 var observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-        if (mutation.addedNodes && mutation.addedNodes.length > 0) {
-            mutation.addedNodes.forEach(function (newNode) {
-                var textNodes = getTextNodesUnder(newNode);
-                textNodes.forEach(function (textNode) {
-                    replaceText(textNode);
-                });
-            });
-        }
-    });
+  mutations.forEach(function (mutation) {
+    if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+      mutation.addedNodes.forEach(function (newNode) {
+        var textNodes = getTextNodesUnder(newNode);
+        textNodes.forEach(function (textNode) {
+          replaceText(textNode);
+        });
+      });
+    }
+  });
 });
 observer.observe(document.body, {
-    childList: true,
-    subtree: true
+  childList: true,
+  subtree: true
 });
 
 })();

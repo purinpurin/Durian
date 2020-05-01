@@ -1,7 +1,8 @@
-var babel = require("babel-core");
+var babel = require("@babel/core");
 var fs = require("fs");
-var template = fs.readFileSync('./src/template.js').toString();
-var code = babel.transformFileSync("./src/main.js").code;
+
+var template = fs.readFileSync("./userscript/template.js").toString();
+var code = babel.transformFileSync("./app/scripts/app.js").code;
 
 var nano = function (template, data) {
 	return template.replace(/\{([\w\.]*)\}/g, function (str, key) {
@@ -33,6 +34,6 @@ var dependencies = `// @require      https://ajax.googleapis.com/ajax/libs/myanm
 var dependencies_gf = `// @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_detector.js
 // @require      https://ajax.googleapis.com/ajax/libs/myanmar-tools/1.1.3/zawgyi_converter.js`;
 
-renderOut('./dist/durian.user.js', dependencies);
+renderOut('./userscript/release/durian.user.js', dependencies);
 // //greasyfork version
-renderOut('./dist/durian.gf.user.js', dependencies_gf);	
+renderOut('./userscript/release/durian.gf.user.js', dependencies_gf);	

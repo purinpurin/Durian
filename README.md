@@ -23,7 +23,7 @@ Webiste: https://violentmonkey.github.io/
 2. Install `Durian`
 
 	You can install this script via `GitHub`:
-    - GitHub: https://raw.githubusercontent.com/purinpurin/Durian/master/dist/durian.user.js
+    - GitHub: https://raw.githubusercontent.com/purinpurin/Durian/master/userscript/release/durian.user.js
     - Greasy Fork: https://greasyfork.org/en/scripts/402235-durian-detect-zawgyi-and-convert-it-to-unicode
 
 
