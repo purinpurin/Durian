@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./app/images/icon_128.png" alt="Cute little Durian icon"/>
+</p>
 <h1 align="center">
   Durian
 </h1>
@@ -13,24 +16,35 @@
   </a>
 </p>
 
-**Durian** is a userscript which detects Zawgyi texts in a webpage and convert them into Unicode compatible texts so that users who do not have Zawgyi or ZawDecode fonts can read texts written with Zawgyi.
+**Durian** detects Zawgyi texts in a webpage and convert them into Unicode compatible texts so that users who do not have Zawgyi or ZawDecode fonts can read texts written with Zawgyi.
 
 
 ## Installation
-1. Install the Chrome/Firefox plugin `Violentmonkey`.
-Webiste: https://violentmonkey.github.io/
+  ### Extensions
+  1. Install the extension.
+      - Firefox: https://addons.mozilla.org/en-US/firefox/addon/durian-for-firefox/
+  2. And... Done!
+
+  ### Userscript
+  1. Install a userscript manager. I recommend [Violentmonkey](https://violentmonkey.github.io/).
+
   
-2. Install `Durian`
-
+  2. Install `Durian`
 	You can install this script via `GitHub`:
-    - GitHub: https://raw.githubusercontent.com/purinpurin/Durian/master/userscript/release/durian.user.js
-    - Greasy Fork: https://greasyfork.org/en/scripts/402235-durian-detect-zawgyi-and-convert-it-to-unicode
-
+      - GitHub: https://raw.githubusercontent.com/purinpurin/Durian/master/userscript/release/durian.user.js
+      - Greasy Fork: https://greasyfork.org/en/scripts/402235-durian-detect-zawgyi-and-convert-it-to-unicode
 
 ## Known bug
 
 Please report any bugs you found [here](https://github.com/purinpurin/Durian/issues).
 
+## Changelog
+### 1.0.0
+- Fix converted texts are unreadable when the page is already using Zawgyi webfont.
+### 0.1.1
+- Add icon.
+### 0.1.0 
+- Initial release.
 
 ## Credits
 Durian uses [Myanmar Tools](https://github.com/google/myanmar-tools) to detect Zawgyi and for converion.
