@@ -2,10 +2,10 @@ language: node_js
 node_js: 12.16.2
 before_script:
   - git checkout master
+  - npm install
 
 script:
-  - npm install
-  - npm build
+  - npm run build
 
 cache:
   yarn: true
