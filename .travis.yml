@@ -1,12 +1,11 @@
 language: node_js
 node_js: 12.16.2
 before_script:
-  - npm install yarn webpack -g
   - git checkout master
-  - yarn
 
 script:
-  - yarn build
+  - npm install
+  - npm build
 
 cache:
   yarn: true
