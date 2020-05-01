@@ -67,27 +67,46 @@ function getTextNodesUnder(element) {
 
   return textNodes;
 }
+/**
+ * Look for Zawgyi font in the page
+ * @returns {Boolean}   - If found return true else false
+ */
 
-var textNodesUnderBody = getTextNodesUnder(document.body);
-textNodesUnderBody.forEach(function (textNode) {
-  replaceText(textNode);
-}); // Monitor for new nodes
 
-var observer = new MutationObserver(function (mutations) {
-  mutations.forEach(function (mutation) {
-    if (mutation.addedNodes && mutation.addedNodes.length > 0) {
-      mutation.addedNodes.forEach(function (newNode) {
-        var textNodes = getTextNodesUnder(newNode);
-        textNodes.forEach(function (textNode) {
-          replaceText(textNode);
-        });
-      });
-    }
+function isZawgyiFontLoaded() {
+  var isLoaded = false;
+  document.fonts.forEach(function (font) {
+    if (/.*zawgyi.*/i.test(font.family)) isLoaded = true;
   });
-});
-observer.observe(document.body, {
-  childList: true,
-  subtree: true
+  return isLoaded;
+} // Wait until all fonts are loaded before looking for Zawgyi
+
+
+document.fonts.ready.then(function () {
+  // We only need to convert if the page is not using Zawgyi webfont
+  if (!isZawgyiFontLoaded()) {
+    var textNodesUnderBody = getTextNodesUnder(document.body);
+    textNodesUnderBody.forEach(function (textNode) {
+      replaceText(textNode);
+    }); // Monitor for new nodes
+
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+          mutation.addedNodes.forEach(function (newNode) {
+            var textNodes = getTextNodesUnder(newNode);
+            textNodes.forEach(function (textNode) {
+              replaceText(textNode);
+            });
+          });
+        }
+      });
+    });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
 });
 
 })();
