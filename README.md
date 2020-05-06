@@ -23,6 +23,7 @@
   ### Extensions
   1. Install the extension.
       - Firefox: https://addons.mozilla.org/en-US/firefox/addon/durian-for-firefox/
+      - Chrome:  https://chrome.google.com/webstore/detail/locbimfkfnbpfidkogkbfjhjlnfckmnl
   2. And... Done!
 
   ### Userscript
