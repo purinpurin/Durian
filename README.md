@@ -5,10 +5,10 @@
   Durian
 </h1>
 <p align="center">
-  <a href="https://travis-ci.org/purinpurin/Durian">
-    <img src="https://img.shields.io/travis/purinpurin/Durian?style=for-the-badge" alt="Current Travis CI build status." />
+  <a href="https://travis-ci.org/purinsan/Durian">
+    <img src="https://img.shields.io/travis/purinsan/Durian?style=for-the-badge" alt="Current Travis CI build status." />
   </a>
-  <a href="https://github.com/purinpurin/Durian/blob/master/LICENSE">
+  <a href="https://github.com/purinsan/Durian/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="Durian is released under the MIT license." />
   </a>  
   <a href="https://github.com/webpack/webpack">
@@ -32,12 +32,12 @@
   
   2. Install `Durian`
 	You can install this script via `GitHub`:
-      - GitHub: https://raw.githubusercontent.com/purinpurin/Durian/master/userscript/release/durian.user.js
+      - GitHub: https://raw.githubusercontent.com/purinsan/Durian/master/userscript/release/durian.user.js
       - Greasy Fork: https://greasyfork.org/en/scripts/402235-durian-detect-zawgyi-and-convert-it-to-unicode
 
 ## Known bug
 
-Please report any bugs you found [here](https://github.com/purinpurin/Durian/issues).
+Please report any bugs you found [here](https://github.com/purinsan/Durian/issues).
 
 ## Changelog
 ### 1.0.0

@@ -16,4 +16,4 @@ cache:
   
 env:
  global:
-   - GH_REF: github.com/purinpurin/Durian.git
+   - GH_REF: github.com/purinsan/Durian.git

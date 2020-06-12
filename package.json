@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/purinpurin/Durian.git"
+    "url": "git+https://github.com/purinsan/Durian.git"
   },
   "keywords": [
     "userjs",
@@ -19,9 +19,9 @@
   "author": "Purin <acclotepho@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/purinpurin/Durian/issues"
+    "url": "https://github.com/purinsan/Durian/issues"
   },
-  "homepage": "https://github.com/purinpurin/Durian",
+  "homepage": "https://github.com/purinsan/Durian",
   "devDependencies": {
     "@babel/core": "7.1.2",
     "@babel/preset-env": "^7.9.6",
